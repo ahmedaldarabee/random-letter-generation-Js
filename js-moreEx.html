@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js - examples</title>
+    <style>
+        .serial {
+            width: 200px;
+            padding: 20px;
+            background-color: #eee;
+            margin: 40px auto 0;
+
+            border-radius: 4px;
+            text-align: center;
+            font-size: 22px;
+            
+            font-weight: bold;
+            height: 66.5px;
+        }
+        .generate {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            user-select: none;
+        }
+        .generate:hover {
+            background-color: #f0440e;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="serial"></div>
+    <span class="generate">Generate</span>
+
+</body>
+
+    <script>
+        let serialContent = document.querySelector(".serial");
+        let generateBtn = document.querySelector(".generate");
+        
+
+        generateBtn.onclick = function(){
+            let randomChar = "ahmed#nayel$mohamed-al/darabee78774";
+            let maxSize = 10;
+            let newContent = "";
+
+            for(let i = 0 ; i < maxSize ; i++ ){
+                newContent += randomChar[Math.floor(Math.random() * randomChar.length)]; 
+            }
+
+            serialContent.innerHTML = newContent;
+        }
+    </script>
+</html>
